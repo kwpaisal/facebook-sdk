@@ -186,6 +186,14 @@ class GraphAPI(object):
         """Writes the given comment on the given post."""
         return self.put_object(object_id, "comments", message=message)
 
+    def put_hide(self, object_id):
+        """hide comment."""
+        return self.put_object(object_id, "", is_hidden=True)
+
+    def put_unhide(self, object_id):
+        """unhide comment."""
+        return self.put_object(object_id, "", is_hidden=False)
+
     def put_like(self, object_id):
         """Likes the given post."""
         return self.put_object(object_id, "likes")
