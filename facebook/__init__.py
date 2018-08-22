@@ -186,6 +186,10 @@ class GraphAPI(object):
         """Writes the given comment on the given post."""
         return self.put_object(object_id, "comments", message=message)
 
+    def put_private(self, object_id, message):
+        """Writes the given comment on the given post."""
+        return self.put_object(object_id, "private_replies", message=message)
+
     def put_hide(self, object_id):
         """hide comment."""
         return self.put_object(object_id, "", is_hidden=True)
